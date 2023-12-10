@@ -43,15 +43,15 @@ The User Management CRUD application, built with Spring Boot and secured by Spri
 ## Configuration
 
 - In **`application.properties`** you can set up the database, custom in base your preferences
-
-  spring.datasource.url=jdbc:mysql://localhost:3306/db_user_spring_boot
+  
+`spring.datasource.url=jdbc:mysql://localhost:3306/db_user_spring_boot
   spring.datasource.username=user
   spring.datasource.password=password
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
   spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
   spring.jpa.show-sql=true
   spring.jpa.hibernate.ddl-auto=update
-  logging.level.org.hibernate.SQL=debug
+  logging.level.org.hibernate.SQL=debug`
 
 ## Endpoints
 
@@ -59,11 +59,11 @@ You can consult the swagger docs in [localhost:8080/swagger-ui/index.html](local
 
 ### Create User
 
-**Endpoint:** `/users`
-**Method:** POST
-**Request Body:**
+* **Endpoint:** `/users`
+* **Method:** POST
+* **Request Body:**
 `{  "username": "3", "password": "some password", "email": "email@gmail.com }`
-**Response:**
+* **Response:**
 `200 status code`
 
 ### Get Users
@@ -75,29 +75,29 @@ You can consult the swagger docs in [localhost:8080/swagger-ui/index.html](local
 
 ### Get User
 
-**Endpoint:** `/users/<id>`
-**Method:** GET
-**Request Body**:
+* **Endpoint:** `/users/<id>`
+* **Method:** GET
+* **Request Body**:
 `{"id": 3}`
-**Response**:
+* **Response**:
 `{  "username":  "john_doe", password":  "secure password", "roles":  "admin"  }`
 
 ### Update User
 
-**Endpoint:** `/users`
-**Method:** PUT
-**Request Body:**
+* **Endpoint:** `/users`
+* **Method:** PUT
+* **Request Body:**
 `{  "username": "new name" }`
-**Response:**
+* **Response:**
 `{  "username": "new name", "password": "secure password", "roles": "admin" }`
 
 ### Delete User
 
-**Endpoint:** `/users`
-**Method:** DELETE
-**Request Body:**
+* **Endpoint:** `/users`
+* **Method:** DELETE
+* **Request Body:**
 `{  "id": "3" }`
-**Response:**
+* **Response:**
 `204 No Content`
 
 ## Contributing
