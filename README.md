@@ -43,16 +43,16 @@ The User Management CRUD application, built with Spring Boot and secured by Spri
 ## Configuration
 
 - In **`application.properties`** you can set up the database, custom in base your preferences
-  
-`spring.datasource.url=jdbc:mysql://localhost:3306/db_user_spring_boot
-  spring.datasource.username=user
-  spring.datasource.password=password
-  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-  spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-  spring.jpa.show-sql=true
-  spring.jpa.hibernate.ddl-auto=update
-  logging.level.org.hibernate.SQL=debug`
-
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/db_user_spring_boot
+spring.datasource.username=user
+spring.datasource.password=password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+logging.level.org.hibernate.SQL=debug
+```
 ## Endpoints
 
 You can consult the swagger docs in [localhost:8080/swagger-ui/index.html](localhost:8080/swagger-ui/index.html) after in explorer put `/api-docs`
