@@ -9,10 +9,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: mypassword
+          MYSQL_DATABASE: mydatabase
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
     steps:
       - name: Checkout del codigo
         uses: actions/checkout@v3
-      
+
       - name: Configurar Java 17
         uses: actions/setup-java@v3
         with:
@@ -22,7 +35,15 @@ jobs:
 
       - name: Dar permisos de ejecución a mvnw
         run: chmod +x mvnw
-          
+      
+      - name: Esperar a que MySQL esté listo
+        run: |
+          sudo apt-get install -y mariadb-client
+          mysql --host=127.0.0.1 --port=3306 --user=root --password=mypassword --execute="SELECT 1;"
+
       - name: Compilar y ejecutar pruebas con Maven
+        env:
+          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/mydatabase
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: luis1234
         run: ./mvnw clean verify
-    
