@@ -45,7 +45,7 @@ jobs:
 
       - name: Compilar y ejecutar pruebas con Maven
         env:
-          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/db_user_springboot
+          SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_user_springboot
           SPRING_DATASOURCE_USERNAME: testuser
           SPRING_DATASOURCE_PASSWORD: luis1234
         run: ./mvnw clean verify
