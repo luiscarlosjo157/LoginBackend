@@ -41,7 +41,7 @@ jobs:
       - name: Esperar a que MySQL esté listo
         run: |
           sudo apt-get install -y mariadb-client
-          mysql --host=127.0.0.1 --port=3306 --user=root --password=mypassword --execute="SELECT 1;"
+          mysql --host=mysql --port=3306 --user=testuser --password=luis1234 --execute="SELECT 1;"
 
       - name: Compilar y ejecutar pruebas con Maven
         env:
