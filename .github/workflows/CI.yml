@@ -1,6 +1,6 @@
 name: CI de Spring Boot
-
-on: 
+#comentario para prueba
+on:
   push:
     branches: ["main"]
   pull_request:
@@ -31,13 +31,13 @@ jobs:
       - name: Configurar Java 17
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: 'maven'
+          java-version: "17"
+          distribution: "temurin"
+          cache: "maven"
 
       - name: Dar permisos de ejecución a mvnw
         run: chmod +x mvnw
-      
+
       - name: Esperar a que MySQL esté listo
         run: |
           sudo apt-get install -y mariadb-client
