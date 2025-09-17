@@ -13,8 +13,10 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: mypassword
-          MYSQL_DATABASE: mydatabase
+          MYSQL_ROOT_PASSWORD: luis1234
+          MYSQL_DATABASE: db_user_springboot
+          MYSQL_USER: testuser # Nuevo usuario
+          MYSQL_PASSWORD: luis1234 # Nueva contraseña
         ports:
           - 3306:3306
         options: >-
@@ -44,6 +46,6 @@ jobs:
       - name: Compilar y ejecutar pruebas con Maven
         env:
           SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/db_user_springboot
-          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_USERNAME: testuser
           SPRING_DATASOURCE_PASSWORD: luis1234
         run: ./mvnw clean verify
