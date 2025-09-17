@@ -15,8 +15,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: luis1234
           MYSQL_DATABASE: db_user_springboot
-          MYSQL_USER: testuser # Nuevo usuario
-          MYSQL_PASSWORD: luis1234 # Nueva contraseña
+          MYSQL_USER: testuser
+          MYSQL_PASSWORD: luis1234
         ports:
           - 3306:3306
         options: >-
